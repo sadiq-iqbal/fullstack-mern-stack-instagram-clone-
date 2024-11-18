@@ -1,0 +1,31 @@
+2024-11-15	21:31:46	Email already exists : DuplicateValueError: Email already exists
+    at signup (C:\Users\DELL\Desktop\Instagram Clone\Server\controllers\authController.js:35:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2024-11-15	21:34:10	Email already exists : DuplicateValueError
+2024-11-15	21:35:16	Email already exists : DuplicateValueError
+2024-11-15	21:35:45	Email already exists : DuplicateValueError
+2024-11-15	21:35:49	undefined : undefined
+2024-11-15	21:36:38	Username already exists : DuplicateValueError
+2024-11-15	22:00:26	Email already exists : DuplicateValueError
+2024-11-15	22:01:58	secretOrPrivateKey must have a value : Error
+2024-11-15	22:04:44	secretOrPrivateKey must have a value : Error
+2024-11-15	22:06:25	secretOrPrivateKey must have a value : Error
+2024-11-15	22:08:27	Email already exists : DuplicateValueError
+2024-11-15	22:08:35	Username already exists : DuplicateValueError
+2024-11-15	22:08:40	ACCESS AND REFRESH TOKEN must have a value : Error
+2024-11-15	22:12:24	ACCESS AND REFRESH TOKEN must have a value : Error
+2024-11-15	22:17:01	ACCESS AND REFRESH TOKEN must have a value : Error
+2024-11-15	22:17:50	Email already exists : DuplicateValueError
+2024-11-17	15:00:22	Cannot access 'Post' before initialization : ReferenceError
+2024-11-17	15:22:17	Email already exists : DuplicateValueError
+2024-11-17	15:22:32	Email already exists : DuplicateValueError
+2024-11-17	15:22:59	Email already exists : DuplicateValueError
+2024-11-17	15:23:34	Email already exists : DuplicateValueError
+2024-11-17	15:24:00	Email already exists : DuplicateValueError
+2024-11-17	15:24:20	Email already exists : DuplicateValueError
+2024-11-18	19:49:58	Post not found : Error
+2024-11-18	19:50:17	postToDelete.remove is not a function : TypeError
+2024-11-18	19:51:31	postToDelete.remove is not a function : TypeError
+2024-11-18	19:56:52	postToDelete?.remove is not a function : TypeError
+2024-11-18	19:57:22	Post not found : Error
+2024-11-18	20:55:46	isProduction is not defined : ReferenceError
