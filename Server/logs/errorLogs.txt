@@ -29,3 +29,7 @@
 2024-11-18	19:56:52	postToDelete?.remove is not a function : TypeError
 2024-11-18	19:57:22	Post not found : Error
 2024-11-18	20:55:46	isProduction is not defined : ReferenceError
+2024-11-19	00:17:20	Comments validation failed: userRef: Path `userRef` is required. : ValidationError
+2024-11-19	00:19:20	Comments validation failed: userRef: Path `userRef` is required. : ValidationError
+2024-11-19	10:13:04	comment.findByIdAndDelete is not a function : TypeError
+2024-11-19	10:47:48	Unauthorized : undefined

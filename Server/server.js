@@ -6,6 +6,8 @@ const authRouter = require('./routes/authRoutes');
 const errorWare = require('./middleware/errorWare');
 const cookieParser = require('cookie-parser');
 const postRouter = require('./routes/postRoute.js');
+const commentRouter = require('./routes/commentRoute.js');
+
 app.use(cookieParser());
 app.use(logger);
 app.use(express.json())
@@ -14,8 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 
 // console.log(process.env.ATSK);
 app.use('/', authRouter);
+app.use('/api/comments', commentRouter);
 app.use('/api', postRouter);
-
 
 app.use(errorWare);
 // custom function that connects to both the database and the server

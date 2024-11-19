@@ -91,12 +91,57 @@ const postController = {
 
     },
 
-    async getPost() {
-
+    async getPostsbyId(req, res, next) {
+        const userId = req.params.userId;
+        try {
+            const posts = await Post.find({ userRef: userId }).sort({ timestamp: -1 });
+            if (!posts) {
+                const error = {
+                    status: 404,
+                    message: 'Posts not found'
+                }
+            }
+            res.status(200).json({ message: "Posts fetched successfully", data: posts });
+        }
+        catch (error) {
+            next(error)
+        }
     },
 
-    async getPosts() {
+    async getPostsbyId(req, res, next) {
+        const postId = req.params.postId;
+        try {
+            const posts = await Post.find({ _id: postId }).sort({ timestamp: -1 });
+            if (!posts) {
+                const error = {
+                    status: 404,
+                    message: 'Posts not found'
+                }
+            }
+            res.status(200).json({ message: "Posts fetched successfully", data: posts });
+        }
+        catch (error) {
+            next(error)
+        }
+    },
 
+    async likePost(req, res, next) {
+        const postId = req.params.postId;
+        try {
+            const post = await Post.findById(postId);
+            if (!post) {
+                return res.status(404).json({ message: 'Post not found' });
+            }
+            if (post.likes.includes(req.user_Id)) {
+                return res.status(400).json({ message: 'You have already liked this post' });
+            }
+            post.likes.push(req.user_Id);
+            await post.save();
+            res.status(200).json({ message: 'Post liked successfully' });
+
+        } catch (error) {
+            return next(error);
+        }
     }
 
 }
