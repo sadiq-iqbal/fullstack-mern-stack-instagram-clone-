@@ -1,5 +1,6 @@
 const joi = require('joi');
 const Post = require('../model/posts');
+const mongoose = require('mongoose');
 const postController = {
 
     async getPosts(req, res, next) {
@@ -133,14 +134,40 @@ const postController = {
                 return res.status(404).json({ message: 'Post not found' });
             }
             if (post.likes.includes(req.user_Id)) {
-                return res.status(400).json({ message: 'You have already liked this post' });
+                post.likes = post.likes.filter(like => like.toString != req.user_Id.toString());
+                await post.save();
+                return res.status(200).json({ message: 'Post unliked successfully', isliked: false });
             }
             post.likes.push(req.user_Id);
             await post.save();
-            res.status(200).json({ message: 'Post liked successfully' });
+            res.status(200).json({ message: ' Post liked successfully', isliked: true });
 
         } catch (error) {
             return next(error);
+        }
+    },
+    async getLikes(req, res, next) {
+        const postId = req.params.postId;
+        if (!mongoose.Types.ObjectId.isValid(postId)) {
+            return res.status(400).json({ message: 'Invalid Post ID format' });
+        }
+        console.log(postId);
+        try {
+            const post = await Post.findById(postId);
+            console.log(post);
+            if (!post) {
+                const error = {
+                    status: 404,
+                    message: 'Posts not found'
+                }
+                next(error);
+            }
+            const totalLikes = post.likes.length;
+            res.status(200).json({ message: "Likes fetched successfully", data: post.likes, totalLikes });
+        }
+        catch (error) {
+            next(error);
+
         }
     }
 

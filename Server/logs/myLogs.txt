@@ -104,3 +104,13 @@
 2024-11-19	15:17:54	/api/posts/post/673c135e18fdb667dc6b641e :	 localhost :	 GET 	
 2024-11-19	15:18:04	/api/posts/post/673c135e18fdb667dc6b641e :	 localhost :	 GET 	
 2024-11-19	15:19:16	/api/posts/post/673b8e503adbea6473c65c38 :	 localhost :	 GET 	
+2024-11-19	16:21:06	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:21:44	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:30:00	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:30:10	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:30:23	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:31:48	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:32:15	/api/posts/like/673c135e18fdb667dc6b641e :	 localhost :	 POST 	
+2024-11-19	16:33:16	/api/posts/like/673c25ada22a3dc7be064392 :	 localhost :	 POST 	
+2024-11-19	16:34:43	/api/posts/l673c25ada22a3dc7be064392/likes :	 localhost :	 GET 	
+2024-11-19	16:38:53	/api/posts/673c135e18fdb667dc6b641e/likes :	 localhost :	 GET 	

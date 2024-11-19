@@ -33,3 +33,4 @@
 2024-11-19	00:19:20	Comments validation failed: userRef: Path `userRef` is required. : ValidationError
 2024-11-19	10:13:04	comment.findByIdAndDelete is not a function : TypeError
 2024-11-19	10:47:48	Unauthorized : undefined
+2024-11-19	16:34:43	Cast to ObjectId failed for value "l673c25ada22a3dc7be064392" (type string) at path "_id" for model "Post" : CastError
