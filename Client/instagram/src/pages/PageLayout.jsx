@@ -5,10 +5,10 @@ function PageLayout({ children }) {
   console.log(children);
   return (
     <main>
-      <nav className="  dark:bg-black md:fixed md:top-0 md:bottom-0 md:w-[250px] dark:text-white">
+      <nav className="  dark:bg-black md:fixed md:top-0  border-[#8886867d] border-r-[1px] md:bottom-0 md:w-[250px] dark:text-white">
         <Navgation />
       </nav>
-      <section className="bg-black h-32 ml-[250px]">
+      <section className="bg-black h-[100vh] overflow-y-auto ml-[250px]">
         <Outlet></Outlet>
       </section>
     </main>

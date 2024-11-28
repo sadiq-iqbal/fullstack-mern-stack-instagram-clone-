@@ -1,5 +1,4 @@
-2024-11-18	16:36:57	/register :	 localhost :	 POST 	
-2024-11-18	16:37:08	/signup :	 localhost :	 POST 	
+date	time	/Route :	 Origin :	 Http method 	
 2024-11-18	16:41:00	/signup :	 localhost :	 POST 	
 2024-11-18	16:42:50	/home :	 localhost :	 GET 	
 2024-11-18	16:43:29	/home :	 localhost :	 GET 	

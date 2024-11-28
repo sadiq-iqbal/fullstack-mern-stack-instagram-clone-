@@ -3,8 +3,9 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Feed from "./pages/Feed";
 import PageLayout from "./pages/PageLayout";
+import PostsPage from "./pages/PostsPage";
+import Feed from "./pages/Feed";
 
 // Define routes using createBrowserRouter
 const routes = createBrowserRouter([
@@ -18,7 +19,11 @@ const routes = createBrowserRouter([
         children: [
           {
             path: "/",
-            element: <Feed />,
+            element: <PostsPage />,
+          },
+          {
+            path: "/explore",
+            element: <Feed></Feed>,
           },
         ],
       },
