@@ -8,7 +8,7 @@ try {
     router.post('/posts', verifyJwt, postController.createPost);
     router.get('/posts/feed', postController.getPosts);
     router.get('/posts/:userId', postController.getPostsbyId);
-    router.get('/posts/post/:postId', postController.getPostsbyId);
+    router.get('/posts/post/:postId', postController.getPostbyId);
     router.get('/posts/:postId/likes', verifyJwt, postController.getLikes);
     router.post('/posts/like/:postId', verifyJwt, postController.likePost);
     router.put('/posts/:id', verifyJwt, postController.updatePost);

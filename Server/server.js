@@ -7,7 +7,7 @@ const errorWare = require('./middleware/errorWare');
 const cookieParser = require('cookie-parser');
 const postRouter = require('./routes/postRoute.js');
 const commentRouter = require('./routes/commentRoute.js');
-
+const userRouter = require('./routes/userRoute.js');
 app.use(cookieParser());
 app.use(logger);
 app.use(express.json())
@@ -18,6 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', authRouter);
 app.use('/api/comments', commentRouter);
 app.use('/api', postRouter);
+app.use('/api', userRouter);
 
 app.use(errorWare);
 // custom function that connects to both the database and the server

@@ -3,7 +3,15 @@ const Joi = require('joi');
 const Post = require("../model/posts.js");
 
 const commentController = {
-    getComments: async (req, res) => { },
+    getComments: async (req, res) => {
+        const postId = req.params.postId;
+        try {
+            const comments = await Comments.find({ postRef: postId }).sort({ timestamp: -1 });
+            res.status(200).json({ message: "Comments fetched successfully", data: comments });
+        } catch (error) {
+            res.status(500).json({ message: error.message });
+        }
+    },
     createComment: async (req, res, next) => {
         const { postId } = req.params;
         const user_Id = req.user_Id;

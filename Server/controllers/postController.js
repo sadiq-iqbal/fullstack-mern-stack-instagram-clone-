@@ -109,7 +109,7 @@ const postController = {
         }
     },
 
-    async getPostsbyId(req, res, next) {
+    async getPostbyId(req, res, next) {
         const postId = req.params.postId;
         try {
             const posts = await Post.find({ _id: postId }).sort({ timestamp: -1 });
