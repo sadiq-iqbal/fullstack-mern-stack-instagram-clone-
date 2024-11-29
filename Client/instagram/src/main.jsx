@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PageLayout from "./pages/PageLayout";
 import PostsPage from "./pages/PostsPage";
 import Feed from "./pages/Feed";
+import ProfilePage from "./pages/ProfilePage";
+import UserProfile from "./components/UserProfile";
 
 // Define routes using createBrowserRouter
 const routes = createBrowserRouter([
@@ -24,6 +26,16 @@ const routes = createBrowserRouter([
           {
             path: "/explore",
             element: <Feed></Feed>,
+          },
+          {
+            path: "/profile/:id",
+            element: <ProfilePage></ProfilePage>,
+            children: [
+              {
+                path: "",
+                element: <UserProfile></UserProfile>,
+              },
+            ],
           },
         ],
       },

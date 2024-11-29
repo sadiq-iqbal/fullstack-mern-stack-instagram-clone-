@@ -1,6 +1,9 @@
+import { Button } from "../components/Button";
+
 function Feed() {
   return (
     <>
+      <Button type="message"></Button>
       <div className="feedContainer p-8 ">
         <div className="container flex flex-row w-[98%] ">
           <div className="master w-[35%] ">
