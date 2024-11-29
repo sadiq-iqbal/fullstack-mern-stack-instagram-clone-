@@ -8,6 +8,8 @@ import PostsPage from "./pages/PostsPage";
 import Feed from "./pages/Feed";
 import ProfilePage from "./pages/ProfilePage";
 import UserProfile from "./components/UserProfile";
+import UserPosts from "./components/UserPosts";
+import UserReels from "./components/UserReels";
 
 // Define routes using createBrowserRouter
 const routes = createBrowserRouter([
@@ -34,6 +36,16 @@ const routes = createBrowserRouter([
               {
                 path: "",
                 element: <UserProfile></UserProfile>,
+                children: [
+                  {
+                    path: "posts",
+                    element: <UserPosts></UserPosts>,
+                  },
+                  {
+                    path: "reels",
+                    element: <UserReels></UserReels>,
+                  },
+                ],
               },
             ],
           },
