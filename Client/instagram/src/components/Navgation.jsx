@@ -8,6 +8,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { Link } from "react-router-dom";
 
 function Navgation() {
   const navItems = [
@@ -75,13 +76,16 @@ function Navgation() {
   return (
     <ul className="md:flex md:flex-col md:justify-between md:overflow-y-hidden  md:h-full md:p-4">
       {navItems.map((item) => (
-        <li
-          key={item.id}
-          className=" active:font-bold hover:bg-[rgba(56,55,55,0.6)] p-4 rounded-md transition-all delay-70 flex items-center"
-        >
+        <li key={item.id}>
+          <Link
+            to={item.path}
+            className="active:font-bold hover:bg-[rgba(56,55,55,0.6)] p-4 rounded-md transition-all delay-70 flex items-center"
+          >
+            {" "}
+            <span className="mr-4 font-extrabold">{item.icon}</span>
+            {item.name}
+          </Link>
           {/* Render the icon */}
-          <span className="mr-4 font-extrabold">{item.icon}</span>
-          {item.name}
         </li>
       ))}
     </ul>

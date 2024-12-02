@@ -10,6 +10,9 @@ import ProfilePage from "./pages/ProfilePage";
 import UserProfile from "./components/UserProfile";
 import UserPosts from "./components/UserPosts";
 import UserReels from "./components/UserReels";
+import ReelsPage from "./pages/ReelsPage";
+import Reel from "./components/Reel";
+import Login from "./components/login";
 
 // Define routes using createBrowserRouter
 const routes = createBrowserRouter([
@@ -49,9 +52,27 @@ const routes = createBrowserRouter([
               },
             ],
           },
+          {
+            path: "reels",
+            element: <ReelsPage></ReelsPage>,
+            // children: [
+            //   {
+            //     path: "",
+            //     element: <Reel></Reel>,
+            //   },
+            // ],
+          },
         ],
       },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <h1>page not found </h1>,
   },
 ]);
 
