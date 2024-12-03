@@ -96,7 +96,10 @@ const authController = {
             // Send success response
             return res.status(201).json({
                 message: 'User created successfully',
-                user: userDto
+                data: {
+                    user: userDto,
+                    accessToken,
+                }
             });
 
         } catch (error) {
@@ -167,7 +170,8 @@ const authController = {
             return res.status(200).json({
                 message: 'User logged in successfully',
                 user: userDto,
-                isAuthenticated: true
+                isAuthenticated: true,
+                token: accessToken
             });
         }
         catch (error) {

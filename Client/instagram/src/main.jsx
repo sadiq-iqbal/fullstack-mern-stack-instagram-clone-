@@ -13,8 +13,10 @@ import UserReels from "./components/UserReels";
 import ReelsPage from "./pages/ReelsPage";
 import Reel from "./components/Reel";
 import Login from "./components/login";
-
+import { Provider } from "react-redux";
+import store from "./App/store.js";
 // Define routes using createBrowserRouter
+console.log(store);
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -68,6 +70,10 @@ const routes = createBrowserRouter([
         path: "/login",
         element: <Login></Login>,
       },
+      // {
+      //   path:"signup",
+      //   element: <Signup></Signup>
+      // }
     ],
   },
   {
@@ -78,7 +84,7 @@ const routes = createBrowserRouter([
 
 // Render the app with RouterProvider
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  <Provider store={store}>
     <RouterProvider router={routes} />
-  </StrictMode>
+  </Provider>
 );
