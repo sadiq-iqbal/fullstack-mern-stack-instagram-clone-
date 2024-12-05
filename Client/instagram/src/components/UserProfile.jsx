@@ -2,18 +2,74 @@ import person from "../assets/images/person.png";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import PersonAddOutlinedIcon from "@mui/icons-material/PersonAddOutlined";
 import LinkIcon from "@mui/icons-material/Link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "./Button";
 import UserDetails from "./UserDetails";
+import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/user/userSlice";
 const UserProfile = () => {
   const [isVerfied, setIsVerfied] = useState(true);
-  //   dummy values to prevent application from crashing
-  let posts;
-  let followers;
-  let following;
-  let bio;
-  let name;
-  let website;
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [isPrivate, setIsPrivate] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
+  const [isPersonal, setIsPersonal] = useState(false);
+  const [id, setId] = useState("");
+
+  // states for user details
+  const [profile, setProfile] = useState({
+    name: "",
+    bio: "",
+    website: "",
+    username: "",
+    posts: [],
+    followers: 0,
+    following: 0,
+  });
+
+  const [name, setName] = useState("");
+  const [bio, setBio] = useState("");
+  const [website, setWebsite] = useState("");
+  const [username, setUsername] = useState("");
+  const [posts, setPosts] = useState([]);
+  const [followers, setFollowersCount] = useState(0);
+  const [following, setFollowingCount] = useState(0);
+  // const [profileImage , setProfileImage] = useState('');
+  // const [postsCount, setPostsCount] = useState(0);
+
+  // other hooks
+  const user = useSelector(selectUser);
+  console.log(user);
+  const paramId = useParams().id;
+
+  useEffect(() => {
+    if (user) {
+      if (user?.id === paramId) {
+        // If it's the logged-in user, use the Redux state
+        setIsPersonal(true);
+        setProfile({
+          name: user.name,
+          username: user.username,
+          bio: user.bio,
+          website: user.website,
+          posts: user.posts,
+          followers: user.followers,
+          following: user.following,
+        });
+      }
+    } else {
+      // Fetch data for another user
+      fetch(`http://localhost:3000/api/users/${paramId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setIsPersonal(false);
+          setProfile(data.data);
+        })
+        .catch((error) => console.error("Error fetching user data:", error));
+    }
+  }, [paramId]);
+
+  console.log(paramId);
   return (
     <>
       <section className="  justify-center   min-h-[70vh]">
@@ -25,13 +81,21 @@ const UserProfile = () => {
             <div>
               <div className="text-white flex gap-3 items-center">
                 <div className="flex justify-center gap-1 flex-row items-center">
-                  <h3 className="-translate-y-1">username</h3>
+                  <h3 className="-translate-y-1"> {profile?.username}</h3>
                   {isVerfied && (
                     <VerifiedIcon fontSize="small" color="primary" />
                   )}
                 </div>
-                <Button type="follow"></Button>
-                <Button type="message" buttonText={"Message"}></Button>
+                {isPersonal ? (
+                  <Button type="edit" buttonText={"Edit profile"}></Button>
+                ) : (
+                  <Button type="follow"></Button>
+                )}
+                {isPersonal ? (
+                  <Button type="message" buttonText={"view archive"}></Button>
+                ) : (
+                  <Button type="message" buttonText={"Message"}></Button>
+                )}
                 <div className=" bg-[#5f5e5e] hover:bg-[#414141] w-8 h-8 flex flex-row justify-center items-center  rounded-lg">
                   <PersonAddOutlinedIcon fontSize="small" />
                 </div>
@@ -41,18 +105,25 @@ const UserProfile = () => {
               <ul className="flex gap-6">
                 <li>
                   <div>
-                    <span className="font-[600]">{posts || 100} </span> posts
+                    <span className="font-[600]">
+                      {profile?.posts?.length || 100}{" "}
+                    </span>{" "}
+                    posts
                   </div>
                 </li>
                 <li>
                   <div>
-                    <span className="font-[600]">{followers || 240} </span>{" "}
+                    <span className="font-[600]">
+                      {profile.followers || 240}{" "}
+                    </span>{" "}
                     Followers{" "}
                   </div>
                 </li>
                 <li>
                   <div>
-                    <span className="font-[600]">{following || 304}</span>{" "}
+                    <span className="font-[600]">
+                      {profile.following || 304}
+                    </span>{" "}
                     Following
                   </div>
                 </li>
@@ -61,16 +132,16 @@ const UserProfile = () => {
             <div className="text-white mt-6 w-[400px]">
               <ul className="flex flex-col gap-2 ">
                 <li>
-                  <p>{name || "My Name"}</p>
+                  <p>{profile.name || "My Name"}</p>
                 </li>
                 <li>
                   <p>
-                    {bio || (
-                      <p>
+                    {profile.bio || (
+                      <span>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Voluptate fugiat nisi maiores impedit error minus at,
                         deleniti soluta ipsum dicta?
-                      </p>
+                      </span>
                     )}
                   </p>
                 </li>
@@ -82,11 +153,11 @@ const UserProfile = () => {
                         style={{ color: "white" }}
                       ></LinkIcon>
                     </span>
-                    {website || (
-                      <p>
+                    {profile.website || (
+                      <span>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Itaque, magnam.
-                      </p>
+                      </span>
                     )}
                   </p>
                 </li>

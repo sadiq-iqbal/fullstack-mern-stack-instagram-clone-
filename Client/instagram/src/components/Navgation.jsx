@@ -9,8 +9,12 @@ import AddBoxIcon from "@mui/icons-material/AddBox";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectUser } from "../features/user/userSlice";
 
 function Navgation() {
+  const user = useSelector(selectUser);
+
   const navItems = [
     {
       id: -1,
@@ -62,7 +66,7 @@ function Navgation() {
     {
       id: 7,
       name: "Profile",
-      path: "/profile",
+      path: `/profile/${user?.id}`,
       icon: <AccountCircleIcon />,
     },
     {

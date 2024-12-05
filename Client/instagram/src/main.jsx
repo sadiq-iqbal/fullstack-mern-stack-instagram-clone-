@@ -12,7 +12,7 @@ import UserPosts from "./components/UserPosts";
 import UserReels from "./components/UserReels";
 import ReelsPage from "./pages/ReelsPage";
 import Reel from "./components/Reel";
-import Login from "./components/login";
+import Login from "./pages/Login.jsx";
 import { Provider } from "react-redux";
 import store from "./App/store.js";
 // Define routes using createBrowserRouter

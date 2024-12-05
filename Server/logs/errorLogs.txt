@@ -9,3 +9,5 @@
 2024-12-04	22:11:26	Email and password are required : undefined
 2024-12-04	22:37:38	Email and password are required : undefined
 2024-12-04	22:37:52	Email and password are required : undefined
+2024-12-05	11:02:24	read ECONNRESET : Error
+2024-12-05	11:02:24	read ECONNRESET : Error

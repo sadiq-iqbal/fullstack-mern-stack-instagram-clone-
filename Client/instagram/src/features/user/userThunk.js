@@ -1,18 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+// Async thunk for user login
 const loginUser = createAsyncThunk(
     "auth/loginUser",
-    async (creds) => {
+    async (creds, { rejectWithValue }) => {
         try {
+            console.log("request received");
             const response = await axios.post("http://localhost:3000/login", creds);
-            return response.data; // Return the response data 
-            // question where is the return stored
-            // answer its is stored in the payload of the action
+            return response.data; // Return the response data
         } catch (error) {
-            throw error.response.data; // Throw the error message
+            // Improved error handling: Ensure error.message is included in the rejected value
+            return rejectWithValue(error.response?.data?.message || "Login failed due to an unknown error");
         }
     }
 );
 
-export default loginUser
+export default loginUser;

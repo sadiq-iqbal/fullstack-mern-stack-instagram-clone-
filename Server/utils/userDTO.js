@@ -6,6 +6,9 @@ class UserDto {
         this.username = user.username;
         this.bio = user.bio;
         this.website = user.website;
+        this.profileImage = user.profileImage;
+        this.followers = user.followers;
+        this.following = user.following;
     }
 }
 

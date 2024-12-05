@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom";
 import Navgation from "../components/Navgation";
-
+import { useState } from "react";
 function PageLayout({ children }) {
+  // const [count, setCount] = useState(0);
   console.log(children);
   return (
     <main>
