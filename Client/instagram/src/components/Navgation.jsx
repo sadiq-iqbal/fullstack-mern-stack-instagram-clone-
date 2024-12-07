@@ -11,6 +11,7 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/user/userSlice";
+import Modal from "./Modal";
 
 function Navgation() {
   const user = useSelector(selectUser);
@@ -60,7 +61,7 @@ function Navgation() {
     {
       id: 6,
       name: "Create",
-      path: "/create",
+      path: "",
       icon: <AddBoxIcon />,
     },
     {
@@ -78,21 +79,24 @@ function Navgation() {
   ];
 
   return (
-    <ul className="md:flex md:flex-col md:justify-between md:overflow-y-hidden  md:h-full md:p-4">
-      {navItems.map((item) => (
-        <li key={item.id}>
-          <Link
-            to={item.path}
-            className="active:font-bold hover:bg-[rgba(56,55,55,0.6)] p-4 rounded-md transition-all delay-70 flex items-center"
-          >
-            {" "}
-            <span className="mr-4 font-extrabold">{item.icon}</span>
-            {item.name}
-          </Link>
-          {/* Render the icon */}
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className="md:flex md:flex-col md:justify-between md:overflow-y-hidden  md:h-full md:p-4">
+        {navItems.map((item) => (
+          <li key={item.id}>
+            <Link
+              to={item.path}
+              className="active:font-bold hover:bg-[rgba(56,55,55,0.6)] p-4 rounded-md transition-all delay-70 flex items-center"
+            >
+              {" "}
+              <span className="mr-4 font-extrabold">{item.icon}</span>
+              {item.name}
+            </Link>
+            {/* Render the icon */}
+          </li>
+        ))}
+      </ul>
+      <Modal />
+    </>
   );
 }
 

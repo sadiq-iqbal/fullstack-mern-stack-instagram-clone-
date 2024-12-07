@@ -43,7 +43,7 @@ const routes = createBrowserRouter([
                 element: <UserProfile></UserProfile>,
                 children: [
                   {
-                    path: "posts",
+                    path: "",
                     element: <UserPosts></UserPosts>,
                   },
                   {

@@ -11,3 +11,46 @@
 2024-12-04	22:37:52	Email and password are required : undefined
 2024-12-05	11:02:24	read ECONNRESET : Error
 2024-12-05	11:02:24	read ECONNRESET : Error
+2024-12-05	14:51:49	Post validation failed: userRef: Path `userRef` is required. : ValidationError
+2024-12-06	09:30:18	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:30:18	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:30:37	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:30:37	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:30:55	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:30:55	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:31:23	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:31:23	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:31:31	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:31:31	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:31:40	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:31:40	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:35:35	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:35:35	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	09:37:54	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	09:37:54	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:10:57	read ECONNRESET : Error
+2024-12-06	10:11:04	read ECONNRESET : Error
+2024-12-06	10:11:04	read ECONNRESET : Error
+2024-12-06	10:14:57	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:15:01	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:15:04	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:21:32	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:21:40	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:21:42	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:21:47	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:21:54	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:22:23	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:22:23	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:22:43	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:22:43	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:22:56	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:22:56	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:23:09	Cast to ObjectId failed for value "undefined" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:23:09	Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:23:12	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:23:12	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:23:13	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:23:13	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:23:14	Cast to ObjectId failed for value ":userId" (type string) at path "userRef" for model "Post" : CastError
+2024-12-06	10:23:27	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError
+2024-12-06	10:23:33	Cast to ObjectId failed for value ":userId" (type string) at path "_id" for model "User" : CastError

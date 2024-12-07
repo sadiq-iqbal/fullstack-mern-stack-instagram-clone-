@@ -9,7 +9,7 @@ const postRouter = require('./routes/postRoute.js');
 const cors = require('cors');
 // const commentRouter = require('./routes/commentRoute.js');
 const userRouter = require('./routes/userRoute.js');
-// app.use(cookieParser());
+app.use(cookieParser());
 
 app.use(logger);
 app.use(express.json())

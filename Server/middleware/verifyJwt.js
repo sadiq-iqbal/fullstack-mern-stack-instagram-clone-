@@ -2,8 +2,9 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const verifyJwt = (req, res, next) => {
     // Extract access token from cookies
+    console.log(req.cookies);
     const accessToken = req.cookies?.accessToken;
-
+    console.log(accessToken);
     // If no access token is found in cookies, respond with 401 Unauthorized
     if (!accessToken) {
         return res.status(401).json({ message: 'Access token not found' });

@@ -101,6 +101,7 @@ const postController = {
                     status: 404,
                     message: 'Posts not found'
                 }
+                return next(error);
             }
             res.status(200).json({ message: "Posts fetched successfully", data: posts });
         }

@@ -74,8 +74,12 @@ const UserProfile = () => {
     <>
       <section className="  justify-center   min-h-[70vh]">
         <div className="flex gap-10  pt-16    items-center  ">
-          <figure className=" ml-32 inline-block border-2 w-44 h-44  rounded-full p-1">
-            <img src={person} alt="person image" />
+          <figure className="ml-32 inline-block border-2 w-44 h-44 rounded-full p-1 overflow-hidden">
+            <img
+              src={profile?.profileImage || person}
+              alt="person image"
+              className="min-w-[100%] h-full object-cover"
+            />
           </figure>
           <div className="main flex flex-col  p-4  w-[60%] ">
             <div>
@@ -114,7 +118,7 @@ const UserProfile = () => {
                 <li>
                   <div>
                     <span className="font-[600]">
-                      {profile.followers || 240}{" "}
+                      {profile?.followers || 240}{" "}
                     </span>{" "}
                     Followers{" "}
                   </div>
@@ -122,7 +126,7 @@ const UserProfile = () => {
                 <li>
                   <div>
                     <span className="font-[600]">
-                      {profile.following || 304}
+                      {profile?.following || 304}
                     </span>{" "}
                     Following
                   </div>
@@ -132,11 +136,11 @@ const UserProfile = () => {
             <div className="text-white mt-6 w-[400px]">
               <ul className="flex flex-col gap-2 ">
                 <li>
-                  <p>{profile.name || "My Name"}</p>
+                  <p>{profile?.name || "My Name"}</p>
                 </li>
                 <li>
                   <p>
-                    {profile.bio || (
+                    {profile?.bio || (
                       <span>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Voluptate fugiat nisi maiores impedit error minus at,
@@ -153,7 +157,7 @@ const UserProfile = () => {
                         style={{ color: "white" }}
                       ></LinkIcon>
                     </span>
-                    {profile.website || (
+                    {profile?.website || (
                       <span>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Itaque, magnam.
@@ -167,7 +171,7 @@ const UserProfile = () => {
         </div>
       </section>
       <hr className="mt-[76px] w-[85%] m-auto h-1" />
-      <UserDetails></UserDetails>
+      <UserDetails userId={paramId}></UserDetails>
     </>
   );
 };
