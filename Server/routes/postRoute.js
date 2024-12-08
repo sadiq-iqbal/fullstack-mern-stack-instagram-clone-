@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const multer = require('multer');
 const postController = require('../controllers/postController.js')
 const verifyJwt = require('../middleware/verifyJwt.js');
+const upload = require('../utils/fileUploadUtil.js');
 try {
 
     router.post('/posts', verifyJwt, postController.createPost);

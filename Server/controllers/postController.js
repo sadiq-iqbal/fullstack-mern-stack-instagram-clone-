@@ -16,34 +16,36 @@ const postController = {
     },
 
     async createPost(req, res, next) {
-        const { caption, mediaUrl } = req.body;
-
+        const { caption } = req.body; // Caption comes from form data
+        const file = req.file; // File from Multer middleware
+        console.log(file, caption);
+        // Validation schema (caption is required, mediaUrl is optional)
         const postSchema = joi.object({
             caption: joi.string().required(),
-            mediaUrl: joi.string()
         });
 
-
-        const { error } = postSchema.validate(req.body);
+        const { error } = postSchema.validate({ caption });
         if (error) {
             return next(error);
         }
 
         try {
+            // Construct the media URL if a file is uploaded
+            const mediaUrl = file ? `${req.protocol}://${req.get('host')}/uploads/${file.filename}` : null;
+
+            // Save the post in the database
             const myPost = await Post.create({
                 caption,
                 mediaUrl,
-                userRef: req.user_Id
+                userRef: req.user_Id, // Assuming the user ID is added by authentication middleware
             });
-            if (!Post) {
-                return next(error);
-            }
-            res.status(201).json(Post);
-        } catch (error) {
-            return next(error);
-        }
-    },
 
+            res.status(201).json(myPost);
+        } catch (error) {
+            next(error);
+        }
+    }
+    ,
     async deletePost(req, res, next) {
         const id = req.params.id;
 
